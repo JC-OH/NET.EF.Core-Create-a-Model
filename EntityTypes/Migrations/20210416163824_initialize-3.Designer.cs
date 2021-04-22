@@ -4,14 +4,16 @@ using EntityTypes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EntityTypes.Migrations
 {
     [DbContext(typeof(MyContext))]
-    partial class MyContextModelSnapshot : ModelSnapshot
+    [Migration("20210416163824_initialize-3")]
+    partial class initialize3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,23 +47,8 @@ namespace EntityTypes.Migrations
                         .HasColumnName("BlogId")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Created")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(max)")
-                        .HasDefaultValue("getdate()");
-
-                    b.Property<DateTime>("Inserted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("LastUpdated")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime2");
-
                     b.Property<decimal>("Rating")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("decimal(5,2)")
-                        .HasDefaultValue(3m);
+                        .HasColumnType("decimal(5,2)");
 
                     b.Property<decimal>("Score")
                         .HasPrecision(14, 2)
@@ -104,34 +91,6 @@ namespace EntityTypes.Migrations
                     b.ToTable("AspNetUsers", t => t.ExcludeFromMigrations());
                 });
 
-            modelBuilder.Entity("EntityTypes.Person", b =>
-                {
-                    b.Property<int>("PersonId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("DisplayName")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("nvarchar(max)")
-                        .HasComputedColumnSql("[LastName] + ', ' + [FirstName]");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("NameLength")
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("int")
-                        .HasComputedColumnSql("LEN([LastName]) + LEN([FirstName])", true);
-
-                    b.HasKey("PersonId");
-
-                    b.ToTable("Person");
-                });
-
             modelBuilder.Entity("EntityTypes.Post", b =>
                 {
                     b.Property<int>("PostId")
@@ -139,8 +98,8 @@ namespace EntityTypes.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("BlogUrl")
-                        .HasColumnType("varchar(200)");
+                    b.Property<int?>("BlogId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
@@ -150,7 +109,7 @@ namespace EntityTypes.Migrations
 
                     b.HasKey("PostId");
 
-                    b.HasIndex("BlogUrl");
+                    b.HasIndex("BlogId");
 
                     b.ToTable("Post");
                 });
@@ -159,8 +118,7 @@ namespace EntityTypes.Migrations
                 {
                     b.HasOne("EntityTypes.Blog", "Blog")
                         .WithMany("Posts")
-                        .HasForeignKey("BlogUrl")
-                        .HasPrincipalKey("Url");
+                        .HasForeignKey("BlogId");
 
                     b.Navigation("Blog");
                 });

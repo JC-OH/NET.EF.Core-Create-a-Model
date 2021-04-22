@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFModeling", "FluentAPI\EFModeling.csproj", "{912084FD-9179-4121-A01A-96603BD84CC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFModeling", "FluentAPI\EFModeling.csproj", "{912084FD-9179-4121-A01A-96603BD84CC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityTypes", "EntityTypes\EntityTypes.csproj", "{4D93A2A1-93BE-446E-BA06-408126627C5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityTypes", "EntityTypes\EntityTypes.csproj", "{4D93A2A1-93BE-446E-BA06-408126627C5B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShadowIndexerProperties", "ShadowIndexerProperties\ShadowIndexerProperties.csproj", "{79AB58B5-BFD3-4FAC-AF49-9FBFBBB99EFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValueConversions", "ValueConversions\ValueConversions.csproj", "{E6D5EA75-9DFF-47A3-8277-0327F87D5B60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityTypesWithConstructors", "EntityTypesWithConstructors\EntityTypesWithConstructors.csproj", "{9BA60591-1F64-44EE-AC23-3F04D653DE34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{4D93A2A1-93BE-446E-BA06-408126627C5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D93A2A1-93BE-446E-BA06-408126627C5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D93A2A1-93BE-446E-BA06-408126627C5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79AB58B5-BFD3-4FAC-AF49-9FBFBBB99EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79AB58B5-BFD3-4FAC-AF49-9FBFBBB99EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79AB58B5-BFD3-4FAC-AF49-9FBFBBB99EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79AB58B5-BFD3-4FAC-AF49-9FBFBBB99EFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6D5EA75-9DFF-47A3-8277-0327F87D5B60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6D5EA75-9DFF-47A3-8277-0327F87D5B60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6D5EA75-9DFF-47A3-8277-0327F87D5B60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6D5EA75-9DFF-47A3-8277-0327F87D5B60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BA60591-1F64-44EE-AC23-3F04D653DE34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BA60591-1F64-44EE-AC23-3F04D653DE34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BA60591-1F64-44EE-AC23-3F04D653DE34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BA60591-1F64-44EE-AC23-3F04D653DE34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
